@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This domain has expired and is for sale</title>
+<meta name="description" content="This domain name has expired and is available for purchase. Get in touch to make an offer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#D3D9DD;
+  --ink:#1B1F23;
+  --sign:#C93720;
+  --sign-ink:#FFF6EC;
+  --muted:#4A4E52;
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  min-height:100vh;min-height:100dvh;
+  background:var(--paper);color:var(--ink);
+  font-family:"Newsreader",Georgia,serif;font-size:1.25rem;line-height:1.55;
+  display:grid;grid-template-rows:1fr auto;
+  padding:clamp(1.25rem,4vw,3rem);
+}
+main{display:grid;align-content:center;gap:clamp(1.5rem,4vw,3rem);max-width:78rem;width:100%;margin:0 auto}
+.domain{
+  font-family:"Archivo",sans-serif;font-stretch:62%;font-weight:800;
+  font-size:clamp(3rem,15vw,12rem);line-height:.9;letter-spacing:-.01em;
+  overflow-wrap:anywhere;
+  text-decoration:line-through;text-decoration-thickness:.07em;text-decoration-color:var(--sign);
+}
+.sign{
+  justify-self:start;
+  background:var(--sign);color:var(--sign-ink);
+  font-family:"Archivo",sans-serif;font-stretch:75%;font-weight:800;
+  font-size:clamp(1.75rem,5vw,3.5rem);line-height:1;
+  padding:.45em .7em .5em;
+  transform:rotate(-2deg);transform-origin:left center;
+  box-shadow:0 .12em 0 var(--ink);
+  animation:drop .6s cubic-bezier(.25,1,.5,1) .15s both;
+}
+@keyframes drop{from{transform:rotate(-9deg) translateY(-1.5rem);opacity:0}to{transform:rotate(-2deg);opacity:1}}
+.copy{max-width:34rem}
+.copy p+p{margin-top:.75em;color:var(--muted)}
+.cta{
+  justify-self:start;display:inline-block;
+  font-family:"Archivo",sans-serif;font-stretch:90%;font-weight:700;font-size:1.125rem;
+  color:var(--paper);background:var(--ink);text-decoration:none;
+  padding:.9em 1.5em;border-radius:.2em;
+  transition:background .15s;
+}
+.cta:hover{background:#A92B17}
+.cta:focus-visible{outline:3px solid var(--sign);outline-offset:3px}
+footer{max-width:78rem;width:100%;margin:2rem auto 0;font-size:1rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.sign{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <h1 class="domain" id="domain">example.com</h1>
+  <div class="sign">Expired. For sale.</div>
+  <div class="copy">
+    <p>The registration for this domain name has lapsed, and it's now available to buy.</p>
+    <p>Send an offer and we'll reply within two business days.</p>
+  </div>
+  <a class="cta" id="cta" href="mailto:hello@a2ksolutions.net?subject=Offer%20for%20this%20domain">Make an offer</a>
+</main>
+<footer>Not affiliated with any previous owner of this domain.</footer>
+<script>
+  var h=location.hostname;
+  if(h&&h!=="localhost"&&!/^\d+\.\d+\.\d+\.\d+$/.test(h)){
+    h=h.replace(/^www\./,"");
+    document.getElementById("domain").textContent=h;
+    document.title=h+" is for sale";
+    document.getElementById("cta").href="mailto:hello@a2ksolutions.net?subject="+encodeURIComponent("Offer for "+h);
+  }
+</script>
+</body>
+</html>
